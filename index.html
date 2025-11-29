@@ -3,49 +3,625 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İşletme Landing Page</title>
+    <title>Profesyonel Tek Sayfa Web Sitesi</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background: #1e88e5; color: white; padding: 60px 20px; text-align: center; }
-        section { padding: 40px 20px; max-width: 900px; margin: auto; }
-        .btn { background: #1e88e5; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; }
-        .services { display: flex; flex-wrap: wrap; gap: 20px; }
-        .card { flex: 1; min-width: 250px; background: #f3f3f3; padding: 20px; border-radius: 8px; }
-        footer { background: #333; color: white; text-align:center; padding: 20px; font-size:14px; }
+        /* GENEL STİL */
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #222;
+            background: #fafafa;
+        }
+        a { text-decoration: none; }
+
+        /* HERO (EN ÜST BÖLÜM) */
+        .hero {
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+            color: #fff;
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 16px;
+            max-width: 650px;
+            margin: 0 auto 25px;
+            opacity: 0.95;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .btn-main,
+        .btn-outline {
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-block;
+        }
+        .btn-main {
+            background: #ffca28;
+            color: #000;
+        }
+        .btn-outline {
+            border: 1px solid #fff;
+            color: #fff;
+        }
+        .hero-small {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* BÖLÜM GENEL BAŞLIKLARI */
+        section {
+            padding: 60px 20px;
+        }
+        section h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        section p.section-subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        /* FİYAT TABLOSU */
+        .pricing-section {
+            background: #f5f5f5;
+            text-align: center;
+        }
+        .pricing-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .pricing-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            padding: 30px 25px;
+            flex: 1;
+            min-width: 260px;
+            max-width: 330px;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.09);
+        }
+        .pricing-card h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .price span {
+            font-size: 12px;
+            font-weight: normal;
+            color: #777;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px;
+            text-align: left;
+            font-size: 14px;
+        }
+        .pricing-card ul li {
+            margin-bottom: 10px;
+            padding-left: 18px;
+            position: relative;
+        }
+        .pricing-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #1e88e5;
+            font-weight: bold;
+        }
+        .pricing-btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid #1e88e5;
+            color: #1e88e5;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .pricing-btn:hover {
+            background: #1e88e5;
+            color: #fff;
+        }
+        .featured {
+            border: 2px solid #1e88e5;
+            transform: translateY(-5px);
+        }
+        .featured .price {
+            color: #1e88e5;
+        }
+        .featured .pricing-btn.primary {
+            background: #1e88e5;
+            color: #fff;
+        }
+        .badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #ffb300;
+            color: #000;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        /* NEDEN BİZİ SEÇMELİSİNİZ */
+        .why-us {
+            background: #fff;
+            text-align: center;
+        }
+        .why-sub {
+            max-width: 500px;
+            margin: 0 auto 40px;
+            color: #555;
+            font-size: 14px;
+        }
+        .why-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .why-card {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 30px 20px;
+            max-width: 260px;
+            flex: 1;
+            min-width: 230px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .why-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+        }
+        .why-card .icon {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+        .why-card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #1e88e5;
+        }
+        .why-card p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* REFERANSLAR */
+        .testimonials {
+            background: #f5f5f5;
+        }
+        .testimonials-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .testimonial-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 20px 25px;
+            flex: 1;
+            min-width: 260px;
+            max-width: 340px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+        .testimonial-text {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .testimonial-name {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .testimonial-role {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* SSS (FAQ) */
+        .faq {
+            background: #fff;
+        }
+        .faq-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: #f5f5f5;
+            overflow: hidden;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            padding: 12px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            list-style: none;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary:after {
+            content: "+";
+            float: right;
+        }
+        .faq-item[open] summary:after {
+            content: "-";
+        }
+        .faq-item p {
+            padding: 0 16px 12px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        /* İLETİŞİM */
+        .contact {
+            background: #f5f5f5;
+        }
+        .contact-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .contact-info,
+        .contact-form {
+            flex: 1;
+            min-width: 260px;
+        }
+        .contact-info p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .social-buttons {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .social-btn {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            border: 1px solid #1e88e5;
+            color: #1e88e5;
+        }
+        .social-btn.whatsapp {
+            background: #25D366;
+            border-color: #25D366;
+            color: #fff;
+        }
+        .social-btn.instagram {
+            background: #E1306C;
+            border-color: #E1306C;
+            color: #fff;
+        }
+
+        .contact-form form {
+            display: grid;
+            gap: 10px;
+        }
+        .contact-form label {
+            font-size: 13px;
+            text-align: left;
+            color: #444;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 13px;
+            font-family: inherit;
+            width: 100%;
+        }
+        .contact-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .contact-form button {
+            padding: 10px 18px;
+            border-radius: 20px;
+            border: none;
+            background: #1e88e5;
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            justify-self: start;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 12px;
+        }
+        footer a {
+            color: #ffca28;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 60px;
+            }
+            .pricing-card,
+            .why-card,
+            .testimonial-card {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>İşletme Adı</h1>
-        <p>Profesyonel hizmetler sunuyoruz.</p>
-        <a class="btn" href="https://wa.me/905000000000">WhatsApp İletişim</a>
+
+    <!-- HERO -->
+    <header class="hero" id="anasayfa">
+        <div class="hero-inner">
+            <h1>İşletmeniz veya Markanız İçin Profesyonel Tek Sayfa Web Sitesi</h1>
+            <p>İster işletme, ister kişisel marka, ister freelancer olun; hizmetlerinizi sade, modern ve mobil uyumlu bir sayfayla profesyonelce gösterin.</p>
+
+            <div class="hero-buttons">
+                <a class="btn-main" href="https://wa.me/905421239770" target="_blank">
+                    WhatsApp'tan Hemen Yaz
+                </a>
+                <a class="btn-outline" href="https://instagram.com/huseyinelaldi7" target="_blank">
+                    Instagram Profilim @huseyinelaldi7
+                </a>
+            </div>
+
+            <p class="hero-small">
+                İletişim: WhatsApp <strong>+90 542 123 97 70</strong> · Instagram <strong>@huseyinelaldi7</strong>
+            </p>
+        </div>
     </header>
 
-    <section>
-        <h2>Hakkımızda</h2>
-        <p>Buraya işletme hakkında kısa bir tanıtım metni yazılır.</p>
-    </section>
+    <!-- FİYAT TABLOSU -->
+    <section class="pricing-section" id="paketler">
+        <h2>Paketlerimiz</h2>
+        <p class="section-subtitle">Farklı ihtiyaç ve bütçelere uygun tek sayfa web sitesi paketleri.</p>
 
-    <section>
-        <h2>Hizmetlerimiz</h2>
-        <div class="services">
-            <div class="card">Hizmet 1</div>
-            <div class="card">Hizmet 2</div>
-            <div class="card">Hizmet 3</div>
+        <div class="pricing-wrapper">
+            <!-- BASIC -->
+            <div class="pricing-card">
+                <h3>Basic</h3>
+                <p class="price">1.000 ₺ <span>/ tek sefer</span></p>
+                <ul>
+                    <li>Tek sayfa responsive tasarım</li>
+                    <li>Metin ve görsel düzenleme</li>
+                    <li>Temel SEO başlık ve açıklamalar</li>
+                    <li>Dosya olarak teslim</li>
+                </ul>
+                <a href="#iletisim" class="pricing-btn">Bu Paketi Seç</a>
+            </div>
+
+            <!-- STANDARD (ÖNE ÇIKAN) -->
+            <div class="pricing-card featured">
+                <div class="badge">En Çok Tercih Edilen</div>
+                <h3>Standard</h3>
+                <p class="price">2.000 ₺ <span>/ tek sefer</span></p>
+                <ul>
+                    <li>Basic paketin tüm özellikleri</li>
+                    <li>WhatsApp iletişim butonu</li>
+                    <li>Google Haritalar entegrasyonu</li>
+                    <li>1 ücretsiz revizyon</li>
+                </ul>
+                <a href="#iletisim" class="pricing-btn primary">Bu Paketi Seç</a>
+            </div>
+
+            <!-- PREMIUM -->
+            <div class="pricing-card">
+                <h3>Premium</h3>
+                <p class="price">3.500 ₺ <span>/ başlıyor</span></p>
+                <ul>
+                    <li>Standard paketin tüm özellikleri</li>
+                    <li>Domain & hosting kurulumu desteği</li>
+                    <li>Hız optimizasyonu</li>
+                    <li>1 hafta destek ve küçük düzenlemeler</li>
+                </ul>
+                <a href="#iletisim" class="pricing-btn">Bu Paketi Seç</a>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2>Konumumuz</h2>
-        <p>Aşağıdaki haritadan bizi bulabilirsiniz.</p>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18..."
-            width="100%" height="300" style="border:0;" allowfullscreen="">
-        </iframe>
+    <!-- NEDEN BİZİ SEÇMELİSİNİZ -->
+    <section class="why-us" id="neden-biz">
+        <h2>Neden Bizi Seçmelisiniz?</h2>
+        <p class="why-sub">Sektörünüz ne olursa olsun, hedef kitlenize uygun, hızlı ve güvenilir web çözümleri sunuyoruz.</p>
+
+        <div class="why-wrapper">
+            <div class="why-card">
+                <div class="icon">⚡</div>
+                <h3>Hızlı Teslimat</h3>
+                <p>Projelerinizi kısa sürede hazırlayıp yayına almanız için süreci mümkün olduğunca hızlandırıyoruz.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon">📱</div>
+                <h3>Mobil Uyumlu Tasarım</h3>
+                <p>Web sayfanız, telefon, tablet ve bilgisayarlarda profesyonel ve modern bir görünüm sunar.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon">💬</div>
+                <h3>Açık ve Net İletişim</h3>
+                <p>Tüm süreç boyunca ne yapılacağını ve hangi aşamada olduğumuzu şeffaf şekilde paylaşıyoruz.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="icon">🎯</div>
+                <h3>Hedef Odaklı Yaklaşım</h3>
+                <p>İster satış, ister tanıtım, ister portfolyo olsun; sitenizi amacınıza uygun tasarlıyoruz.</p>
+            </div>
+        </div>
     </section>
 
+    <!-- REFERANSLAR -->
+    <section class="testimonials" id="yorumlar">
+        <h2>Müşteri Yorumları</h2>
+        <p class="section-subtitle">Farklı sektörlerden çalıştığımız kişilerin deneyimleri.</p>
+
+        <div class="testimonials-wrapper">
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    “Hem sade hem de profesyonel bir sayfa oldu. Hizmetlerimi tek yerden anlatabildiğim için müşterilerim
+                    beni daha kolay buluyor.”
+                </p>
+                <div class="testimonial-name">Ali Y.</div>
+                <div class="testimonial-role">İşletme Sahibi</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    “Karmaşık bir site istemiyordum. Tek sayfa, mobil uyumlu bir yapı benim için fazlasıyla yeterli oldu.
+                    Süreç boyunca iletişim de çok iyiydi.”
+                </p>
+                <div class="testimonial-name">Elif S.</div>
+                <div class="testimonial-role">Serbest Çalışan / Freelancer</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    “Markam için kurumsal bir görünüm kazanmamı sağlayan bir web sayfası oldu. Görsel ve metin düzenlemeleri
+                    tam istediğim gibi yapıldı.”
+                </p>
+                <div class="testimonial-name">Burak K.</div>
+                <div class="testimonial-role">Girişimci</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SSS -->
+    <section class="faq" id="sss">
+        <h2>Sık Sorulan Sorular</h2>
+        <p class="section-subtitle">Projeye başlamadan önce sık sorulan sorulara göz atabilirsiniz.</p>
+
+        <div class="faq-wrapper">
+            <details class="faq-item">
+                <summary>Bir web sitesini ne kadar sürede teslim ediyorsunuz?</summary>
+                <p>Genellikle 1–3 iş günü içinde tasarımı tamamlayıp teslim ediyorum. Revizyon ve yoğunluk durumuna göre süre az da olsa değişebilir.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hangi sektörler için site yapıyorsunuz?</summary>
+                <p>Tüm sektörler için çalışıyorum: hizmet, perakende, eğitim, sağlık, kişisel marka, portfolyo, freelancer ve daha fazlası. İhtiyacınızı anlatsanız yeterli.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hosting ve domain alımını siz mi yapıyorsunuz?</summary>
+                <p>Domain ve hosting size ait olur; isterseniz hangi firmadan nasıl almanız gerektiği konusunda yönlendirme yapıyorum. Premium paketle kurulum desteği de sağlıyorum.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Ödemeyi nasıl yapabilirim?</summary>
+                <p>Genellikle iş başlangıcında kapora, teslim öncesinde kalan ödeme şeklinde çalışıyorum. Detayları WhatsApp üzerinden netleştirebiliriz.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Sonradan metin veya görsel değişikliği yapabilir misiniz?</summary>
+                <p>Evet. Paketlere göre belirli sayıda ücretsiz revizyon bulunuyor. Daha sonrasında da uygun ücretle güncelleme yapılabilir.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section class="contact" id="iletisim">
+        <h2>İletişime Geçin</h2>
+        <p class="section-subtitle">Projenizi konuşmak veya fiyat almak için benimle hemen iletişime geçebilirsiniz.</p>
+
+        <div class="contact-inner">
+            <div class="contact-info">
+                <p><strong>WhatsApp:</strong> +90 542 123 97 70</p>
+                <p><strong>Instagram:</strong> @huseyinelaldi7</p>
+                <p>En hızlı geri dönüş için WhatsApp üzerinden mesaj atabilirsiniz.</p>
+
+                <div class="social-buttons">
+                    <a class="social-btn whatsapp" href="https://wa.me/905421239770" target="_blank">
+                        WhatsApp'tan Yaz
+                    </a>
+                    <a class="social-btn instagram" href="https://instagram.com/huseyinelaldi7" target="_blank">
+                        Instagram Profilim
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <label for="adsoyad">Ad Soyad</label>
+                    <input type="text" id="adsoyad" name="adsoyad" placeholder="Adınızı ve soyadınızı yazın">
+
+                    <label for="telefon">Telefon / WhatsApp</label>
+                    <input type="text" id="telefon" name="telefon" placeholder="+90 ...">
+
+                    <label for="mesaj">Mesajınız</label>
+                    <textarea id="mesaj" name="mesaj" placeholder="Kısaca ihtiyacınızı yazın."></textarea>
+
+                    <button type="submit">Mesajı Gönder (Örnek)</button>
+                </form>
+                <p style="font-size:12px; color:#777; margin-top:8px;">
+                    Bu form örnektir. Gerçek gönderim için e-posta veya form altyapısı eklenmelidir.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        © 2025 İşletme Adı - Tüm Hakları Saklıdır
+        © 2025 - Tüm Hakları Saklıdır · İletişim:
+        <a href="https://instagram.com/huseyinelaldi7" target="_blank">@huseyinelaldi7</a>
     </footer>
+
 </body>
 </html>
