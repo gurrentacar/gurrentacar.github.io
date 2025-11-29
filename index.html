@@ -2,23 +2,23 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GÜR RENT A CAR | Kiralamanın hızlı ve kolay yolu</title>
+  <title>GÜR Rent A Car – Karaman Araç Kiralama</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GÜR Rent A Car, Karaman merkez ofis teslim, ekonomik ve lüks araç kiralama. Rezervasyon yalnızca telefon ve WhatsApp ile yapılır." />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Poppins Regular / Medium / SemiBold -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-main: #0f0f0f;
-      --bg-alt: #1a1a1a;
-      --text-main: #ffffff;
-      --text-muted: #c7c7c7;
-      --accent: #f0c037;
-      --accent-alt: #e8b225;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --transition-fast: 0.2s ease-out;
+      --bg-main: #0F0F0F;
+      --bg-card: #151515;
+      --bg-soft: #1A1A1A;
+      --accent: #F0C037;
+      --accent-alt: #E8B225;
+      --text-main: #FFFFFF;
+      --text-soft: #C9C9C9;
+      --border-soft: #2A2A2A;
     }
 
     * {
@@ -27,12 +27,16 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #151515, #050505 55%);
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #050505;
       color: var(--text-main);
-      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -45,113 +49,54 @@
       display: block;
     }
 
-    /* Layout */
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    main {
-      flex: 1;
-      padding: 0 16px 90px;
-      max-width: 960px;
+    .container {
+      width: 100%;
+      max-width: 1120px;
       margin: 0 auto;
+      padding: 0 16px;
     }
 
-    section {
-      margin-top: 32px;
+    /* ÜST BİLGİ ÇUBUĞU (Sade) -------------------------------------------- */
+
+    .top-info {
+      background: #0F0F0F;
+      color: var(--text-soft);
+      font-size: 12px;
+      padding: 6px 16px;
+      border-bottom: 1px solid #111;
     }
 
-    .card {
-      background: linear-gradient(145deg, #151515, #0c0c0c);
-      border-radius: var(--radius-lg);
-      padding: 18px 16px;
-      border: 1px solid #262626;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
+    .top-info-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
     }
 
-    .card + .card {
-      margin-top: 12px;
-    }
-
-    .section-eyebrow {
+    .top-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(240,192,55,0.5);
+      color: var(--accent);
       font-size: 11px;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--accent-alt);
-      margin-bottom: 4px;
+      flex-shrink: 0;
     }
 
-    .section-title {
-      font-size: 22px;
-      font-weight: 600; /* SemiBold */
-      margin-bottom: 14px;
-    }
+    /* HEADER -------------------------------------------------------------- */
 
-    .section-sub {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    /* Top promo ticker */
-    .promo-bar {
+    header {
       position: sticky;
       top: 0;
-      z-index: 30;
-      background: #0b0b0b;
-      border-bottom: 1px solid #242424;
-      padding: 6px 0;
-      overflow: hidden;
-    }
-
-    .promo-inner {
-      display: flex;
-      white-space: nowrap;
-      animation: promoScroll 18s linear infinite;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .promo-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-right: 32px;
-    }
-
-    .promo-pill {
-      padding: 2px 8px;
-      border-radius: 999px;
-      border: 1px solid #333;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-    }
-
-    @keyframes promoScroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Header & nav */
-    header {
-      background: rgba(10, 10, 10, 0.96);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid #1f1f1f;
-      position: sticky;
-      top: 28px; /* promo yüksekliği + küçük boşluk */
-      z-index: 40;
+      z-index: 20;
+      background: rgba(5,5,5,0.95);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid #111;
     }
 
     .header-inner {
-      max-width: 960px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 10px 16px;
       display: flex;
@@ -167,83 +112,63 @@
     }
 
     .brand-logo {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
-      border: 1px solid #444;
+      border: 1px solid rgba(240,192,55,0.7);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
-      letter-spacing: 0.28em;
-      text-indent: 0.28em;
-      color: var(--accent);
-    }
-
-    .brand-text-main {
-      font-size: 16px;
+      font-size: 15px;
+      letter-spacing: 2px;
       font-weight: 600;
+      color: var(--accent);
+      background: radial-gradient(circle at 30% 0, #333 0, #050505 80%);
     }
 
-    .brand-text-sub {
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .15em;
+    }
+
+    .brand-sub {
       font-size: 11px;
-      color: var(--text-muted);
+      color: var(--text-soft);
     }
 
-    .nav-inline {
-      display: none;
-      gap: 18px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .nav-inline a {
-      position: relative;
-    }
-
-    .nav-inline a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: width var(--transition-fast);
-    }
-
-    .nav-inline a:hover::after {
-      width: 100%;
-    }
+    /* Hamburger menü (BASİT) -------------------------------------------- */
 
     .hamburger {
-      width: 32px;
-      height: 26px;
-      border-radius: 8px;
+      width: 38px;
+      height: 30px;
+      border-radius: 14px;
       border: 1px solid #333;
+      background: #151515;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 4px;
-      padding: 4px 6px;
+      gap: 5px;
+      padding: 0 9px;
       cursor: pointer;
-      transition: background var(--transition-fast), border-color var(--transition-fast);
     }
 
     .hamburger span {
       height: 2px;
+      width: 100%;
+      background: #eee;
       border-radius: 999px;
-      background: #f5f5f5;
-      transition: transform var(--transition-fast), opacity var(--transition-fast);
-    }
-
-    .hamburger.open {
-      background: #171717;
-      border-color: var(--accent);
+      transition: 0.2s ease;
     }
 
     .hamburger.open span:nth-child(1) {
-      transform: translateY(3px) rotate(45deg);
+      transform: translateY(3.5px) rotate(40deg);
     }
 
     .hamburger.open span:nth-child(2) {
@@ -251,164 +176,145 @@
     }
 
     .hamburger.open span:nth-child(3) {
-      transform: translateY(-3px) rotate(-45deg);
+      transform: translateY(-3.5px) rotate(-40deg);
     }
 
-    /* Mobile drawer nav */
-    .drawer {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 74%;
-      max-width: 320px;
-      height: 100vh;
-      background: #0c0c0c;
-      border-left: 1px solid #262626;
-      box-shadow: -16px 0 35px rgba(0, 0, 0, 0.9);
-      transform: translateX(100%);
-      transition: transform 0.28s ease-out;
-      z-index: 60;
-      display: flex;
-      flex-direction: column;
-      padding: 60px 22px 22px;
-    }
-
-    .drawer.open {
-      transform: translateX(0);
-    }
-
-    .drawer a {
-      padding: 10px 0;
-      font-size: 14px;
-      border-bottom: 1px solid #191919;
-    }
-
-    .drawer a:last-child {
-      border-bottom: none;
-    }
-
-    .drawer .drawer-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--accent-alt);
-      margin-bottom: 10px;
-    }
-
-    .drawer-contact {
-      margin-top: auto;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .drawer-contact strong {
-      color: var(--accent);
-    }
-
-    .drawer-overlay {
+    .mobile-nav {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 50;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.24s ease-out;
+      background: rgba(3,3,3,0.96);
+      backdrop-filter: blur(14px);
+      display: none;
+      flex-direction: column;
+      padding: 72px 24px 24px;
+      z-index: 15;
     }
 
-    .drawer-overlay.visible {
-      opacity: 1;
-      pointer-events: auto;
+    .mobile-nav.open {
+      display: flex;
     }
 
-    /* Hero */
-    .hero {
-      margin-top: 20px;
+    .mobile-nav a {
+      padding: 14px 0;
+      font-size: 18px;
+      border-bottom: 1px solid #1e1e1e;
+      color: var(--text-soft);
+    }
+
+    .mobile-nav a span {
+      color: var(--accent);
+      font-size: 11px;
+      margin-left: 6px;
+    }
+
+    .mobile-nav-bottom {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    /* GENEL BÖLÜM BAŞLIKLARI --------------------------------------------- */
+
+    section {
+      padding: 32px 0;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: .25em;
+      color: var(--accent-alt);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .section-desc {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    /* HERO ---------------------------------------------------------------- */
+
+    .hero-card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      border: 1px solid var(--border-soft);
+      padding: 20px 18px 22px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.75);
     }
 
     .hero-title {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 600;
       margin-bottom: 6px;
     }
 
     .hero-sub {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 14px;
+      font-size: 14px;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      line-height: 1.5;
     }
 
-    .hero-badges {
+    .chip-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
-    .badge {
+    .chip {
+      font-size: 12px;
+      padding: 6px 11px;
       border-radius: 999px;
-      border: 1px solid #303030;
-      padding: 4px 10px;
-      font-size: 11px;
-      color: var(--text-muted);
+      border: 1px solid var(--border-soft);
+      background: #101010;
+      color: var(--text-soft);
     }
 
-    .badge-accent {
-      border-color: var(--accent);
+    .chip--accent {
+      border-color: rgba(240,192,55,0.7);
       color: var(--accent);
+      background: #191307;
     }
 
-    /* Primary actions fixed bottom bar */
-    .action-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 45;
-      background: #050505;
-      border-top: 1px solid #202020;
+    .hero-note {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    /* ARAÇLAR ------------------------------------------------------------ */
+
+    .cars-list {
       display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .action-btn {
-      flex: 1;
-      padding: 12px 10px;
-      border: none;
-      outline: none;
-      background: transparent;
-      color: var(--text-main);
-      font-size: 14px;
-      font-weight: 500;
+    .car-card {
+      background: var(--bg-card);
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 14px 14px 12px;
+    }
+
+    .car-row-top {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background var(--transition-fast), color var(--transition-fast);
-    }
-
-    .action-btn.call {
-      background: #0054c2;
-    }
-
-    .action-btn.wa {
-      background: #0f8f5c;
-    }
-
-    .action-btn span.icon {
-      font-size: 18px;
-    }
-
-    .action-btn:hover {
-      filter: brightness(1.06);
-    }
-
-    /* Car list */
-    .car-card-header {
-      display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 4px;
+      gap: 8px;
+      margin-bottom: 6px;
     }
 
     .car-name {
@@ -418,886 +324,759 @@
 
     .car-tag {
       font-size: 11px;
-      color: var(--accent);
+      padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid #3b310f;
-      padding: 3px 8px;
-      background: rgba(240, 192, 55, 0.04);
-    }
-
-    .car-meta {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .car-cta-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-    }
-
-    .link-underline {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
+      border: 1px solid rgba(240,192,55,0.6);
       color: var(--accent);
+      background: #191307;
+      white-space: nowrap;
     }
 
-    /* FAQ & accordion */
-    .accordion {
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid #262626;
-    }
-
-    .accordion-item + .accordion-item {
-      border-top: 1px solid #262626;
-    }
-
-    .accordion-header {
-      padding: 12px 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      background: #111;
-    }
-
-    .accordion-header span {
+    .car-info {
       font-size: 13px;
-      font-weight: 500;
+      color: var(--text-soft);
+      margin-bottom: 6px;
     }
 
-    .accordion-icon {
-      font-size: 20px;
-      color: var(--accent);
-      transition: transform var(--transition-fast);
-    }
-
-    .accordion-item.open .accordion-icon {
-      transform: rotate(45deg);
-    }
-
-    .accordion-body {
-      max-height: 0;
-      overflow: hidden;
-      background: #090909;
-      padding: 0 14px;
-      transition: max-height 0.26s ease-out, padding 0.26s ease-out;
-    }
-
-    .accordion-item.open .accordion-body {
-      padding: 10px 14px 14px;
-    }
-
-    .accordion-body p {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .accordion-body p:last-child {
-      margin-bottom: 0;
-    }
-
-    .accordion-body ul {
-      padding-left: 16px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    /* Locations & languages (short tutuldu) */
-    .locations-list,
-    .langs-list {
-      list-style: none;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .locations-list li + li {
-      margin-top: 3px;
-    }
-
-    .langs-list li + li {
+    .car-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
       margin-top: 2px;
     }
 
-    .langs-bullet {
-      display: inline-block;
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent);
-      margin-right: 6px;
+    .car-link {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      color: var(--accent);
     }
 
-    /* Testimonials slider */
-    .testimonials-wrapper {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-lg);
-      border: 1px solid #262626;
-      background: #101010;
-    }
-
-    .testimonials-track {
-      display: flex;
-      flex-direction: column;
-      animation: testimonialsSlide 20s linear infinite;
-    }
-
-    .testimonial {
-      padding: 12px 14px;
-      border-bottom: 1px solid #1f1f1f;
-    }
-
-    .testimonial:last-child {
-      border-bottom: none;
-    }
-
-    .testimonial-name {
-      font-size: 13px;
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-
-    .testimonial-text {
+    .car-wa {
       font-size: 12px;
-      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--text-soft);
     }
 
-    @keyframes testimonialsSlide {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-50%);
-      }
-    }
-
-    /* Contact */
-    .contact-list {
-      list-style: none;
+    .car-wa-arrow {
       font-size: 13px;
-      color: var(--text-muted);
     }
 
-    .contact-list li + li {
-      margin-top: 6px;
+    /* HAKKIMIZDA --------------------------------------------------------- */
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 18px 16px 18px;
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.7;
     }
 
-    .contact-label {
+    .card h3 {
+      font-size: 16px;
       font-weight: 500;
+      margin-bottom: 8px;
       color: var(--text-main);
     }
 
-    .contact-highlight {
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .quick-actions {
-      margin-top: 14px;
-      display: grid;
-      gap: 8px;
-    }
-
-    .quick-btn {
-      width: 100%;
-      border-radius: 999px;
-      padding: 10px 14px;
+    .bullet-badges {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-wrap: wrap;
       gap: 8px;
+      margin-top: 12px;
+    }
+
+    .bullet-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px dashed var(--border-soft);
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    /* MÜŞTERİ YORUMLARI (KAYAR TEK KART) -------------------------------- */
+
+    .review-box {
+      background: var(--bg-card);
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 16px 16px 14px;
+      min-height: 96px;
+      overflow: hidden;
+    }
+
+    .review-name {
       font-size: 14px;
       font-weight: 500;
-      border: 1px solid var(--accent);
-      background: var(--accent);
-      color: #111;
-      cursor: pointer;
-      text-decoration: none;
-      transition: filter var(--transition-fast), transform var(--transition-fast);
+      margin-bottom: 4px;
     }
 
-    .quick-btn.secondary {
+    .review-text {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .review-dots {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .review-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #333;
+    }
+
+    .review-dot.active {
+      background: var(--accent);
+    }
+
+    /* SSS (details tag ile sade) ---------------------------------------- */
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    details.faq-item {
+      background: var(--bg-card);
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 10px 14px 10px;
+      font-size: 14px;
+    }
+
+    details.faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    details.faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-body {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .faq-body ul {
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+
+    .faq-body li {
+      margin-bottom: 4px;
+    }
+
+    /* İLETİŞİM ----------------------------------------------------------- */
+
+    .contact-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 18px 16px 16px;
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .contact-card strong {
+      color: var(--text-main);
+    }
+
+    .contact-card p + p {
+      margin-top: 4px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 11px 14px;
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+      color: #000;
+    }
+
+    .btn-outline {
       background: transparent;
+      border: 1px solid rgba(240,192,55,0.7);
       color: var(--accent);
     }
 
-    .quick-btn:hover {
-      filter: brightness(1.04);
-      transform: translateY(-1px);
+    .btn-ghost {
+      background: #181818;
+      border: 1px solid #262626;
+      color: var(--text-soft);
     }
 
-    /* Scroll to top */
+    .btn small {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    /* ALT FIXED BAR (Ara + WhatsApp + Instagram) ------------------------ */
+
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 25;
+      background: #020202;
+      border-top: 1px solid #111;
+      padding: 6px 10px 10px;
+    }
+
+    .bottom-bar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .bottom-btn {
+      border-radius: 999px;
+      padding: 9px 6px;
+      font-size: 13px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .bottom-btn.call {
+      background: #0052cc;
+    }
+
+    .bottom-btn.wa {
+      background: #138f50;
+    }
+
+    .bottom-btn.ig {
+      background: linear-gradient(135deg, #F77737, #E1306C);
+    }
+
+    /* SCROLL TO TOP ------------------------------------------------------ */
+
     .scroll-top {
       position: fixed;
-      right: 16px;
-      bottom: 72px;
-      width: 40px;
-      height: 40px;
+      right: 18px;
+      bottom: 78px;
+      width: 38px;
+      height: 38px;
       border-radius: 999px;
-      border: 1px solid #333;
-      background: rgba(10, 10, 10, 0.92);
+      border: 1px solid rgba(240,192,55,0.7);
+      background: #121212;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent);
-      font-size: 20px;
+      font-size: 18px;
       cursor: pointer;
       opacity: 0;
       pointer-events: none;
-      z-index: 40;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-      transition: opacity 0.22s ease-out, transform 0.22s ease-out;
+      transition: 0.2s ease;
+      z-index: 20;
     }
 
-    .scroll-top.visible {
+    .scroll-top.show {
       opacity: 1;
       pointer-events: auto;
-      transform: translateY(0);
     }
 
-    /* Footer */
+    /* FOOTER ------------------------------------------------------------- */
+
     footer {
-      border-top: 1px solid #262626;
-      background: #101520;
-      padding: 14px 16px 70px;
-      font-size: 11px;
-      color: #d0d5e3;
+      padding: 18px 16px 70px;
+      background: #07192C;
+      color: #e4edf7;
       text-align: center;
+      font-size: 11px;
+      line-height: 1.7;
+      margin-top: 28px;
     }
 
-    footer span.highlight {
+    footer span {
       color: var(--accent);
       font-weight: 500;
     }
 
-    /* Desktop tweaks */
+    /* LAYOUT ADJUST ------------------------------------------------------ */
+
+    main {
+      padding-bottom: 70px;
+    }
+
     @media (min-width: 768px) {
-      main {
-        padding-bottom: 110px;
-      }
-
-      .nav-inline {
-        display: flex;
-      }
-
-      .hamburger {
-        display: none;
+      .section-title {
+        font-size: 26px;
       }
 
       .hero-title {
-        font-size: 28px;
+        font-size: 24px;
       }
 
-      .section-title {
-        font-size: 24px;
+      .bottom-bar {
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   </style>
 </head>
-<body>
-  <div class="page">
-    <!-- PROMO TICKER -->
-    <div class="promo-bar">
-      <div class="promo-inner">
-        <div class="promo-item">
-          <span class="promo-pill">%15 İNDİRİM</span>
-          <span>Şehir dışı ve havaalanı transferlerinde özel fiyat sorunuz.</span>
-        </div>
-        <div class="promo-item">
-          <span class="promo-pill">7/24 DESTEK</span>
-          <span>WhatsApp hattımızdan günün her saati ulaşabilirsiniz.</span>
-        </div>
-        <div class="promo-item">
-          <span class="promo-pill">KARAMAN</span>
-          <span>Tüm teslimatlar Karaman Merkez ofisinde sözleşme ile yapılır.</span>
-        </div>
+<body id="top">
+
+  <!-- Üst Bilgi Çubuğu -->
+  <div class="top-info">
+    <div class="top-info-inner">
+      <div class="top-pill">%15 İNDİRİM</div>
+      <div style="font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+        Şehir dışı ve havalimanı transferlerinde özel fiyat sorunuz.
       </div>
     </div>
+  </div>
 
-    <!-- HEADER -->
-    <header>
-      <div class="header-inner">
-        <div class="brand">
-          <div class="brand-logo">GÜR</div>
-          <div>
-            <div class="brand-text-main">RENT A CAR</div>
-            <div class="brand-text-sub">Kiralamanın hızlı ve kolay yolu</div>
-          </div>
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-logo">GÜR</div>
+        <div class="brand-text">
+          <div class="brand-title">RENT A CAR</div>
+          <div class="brand-sub">Kiralamanın hızlı ve kolay yolu</div>
         </div>
-
-        <nav class="nav-inline">
-          <a href="#cars">Araçlar</a>
-          <a href="#about">Hakkımızda</a>
-          <a href="#locations">Lokasyon</a>
-          <a href="#faq">SSS</a>
-          <a href="#terms">Koşullar</a>
-          <a href="#contact">İletişim</a>
-        </nav>
-
-        <button class="hamburger" id="hamburger" aria-label="Menü">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
-    </header>
 
-    <!-- Drawer -->
-    <div class="drawer-overlay" id="drawerOverlay"></div>
-    <nav class="drawer" id="drawer">
-      <div class="drawer-label">Menü</div>
-      <a href="#cars">Araç Filomuz</a>
-      <a href="#about">Hakkımızda</a>
-      <a href="#locations">Lokasyon & Diller</a>
-      <a href="#testimonials">Müşteri Yorumları</a>
-      <a href="#faq">Sık Sorulan Sorular</a>
-      <a href="#terms">Koşul ve Sözleşme</a>
-      <a href="#contact">İletişim</a>
+      <button class="hamburger" id="menuToggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-      <div class="drawer-contact">
-        Rezervasyon hattı: <br />
-        <strong>+90 544 970 97 12</strong>
-      </div>
-    </nav>
+  <!-- Mobil Menü -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#araclar">Araçlarımız <span>liste</span></a>
+    <a href="#hakkimizda">Hakkımızda <span>özet</span></a>
+    <a href="#lokasyonlar">Lokasyonlar <span>&amp; diller</span></a>
+    <a href="#yorumlar">Müşteri yorumları</a>
+    <a href="#sss">Sık sorulan sorular</a>
+    <a href="#iletisim">Rezervasyon &amp; bilgi</a>
 
-    <!-- MAIN -->
-    <main>
+    <div class="mobile-nav-bottom">
+      <a class="btn btn-primary" href="tel:+905449709712">📞 Rezervasyon Hattını Ara</a>
+      <a class="btn btn-outline" href="https://wa.me/905449709712" target="_blank">💬 WhatsApp ile Mesaj Gönder</a>
+      <a class="btn btn-ghost" href="https://instagram.com/gurrentacar" target="_blank">📷 Instagram: @gurrentacar</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
       <!-- HERO -->
-      <section class="hero" id="top">
-        <div class="card">
-          <div class="hero-title">GÜR RENT A CAR</div>
+      <section id="hero">
+        <div class="hero-card">
+          <div class="section-label">GİRİŞ</div>
+          <h1 class="hero-title">GÜR RENT A CAR</h1>
           <p class="hero-sub">
             Konya çıkışlı, Karaman Merkez teslimatlı güvenli ve ekonomik araç kiralama.
             Rezervasyon yalnızca telefon ve WhatsApp ile yapılır.
           </p>
 
-          <div class="hero-badges">
-            <span class="badge">Karaman Merkez Ofis Teslim</span>
-            <span class="badge">Havaalanı &amp; Otogar Servisi</span>
-            <span class="badge badge-accent">15+ araçlık filo</span>
-            <span class="badge">Ekonomik · Orta · Lüks</span>
-            <span class="badge">7/24 destek</span>
+          <div class="chip-row">
+            <div class="chip">Karaman Merkez ofis teslim</div>
+            <div class="chip">Havaalanı &amp; otogar servisi</div>
+            <div class="chip chip--accent">15+ araçlık filo</div>
+            <div class="chip">Ekonomik • Orta • Lüks</div>
+            <div class="chip">7/24 destek</div>
           </div>
 
-          <p class="section-sub" style="margin-bottom:0;">
-            Aşağıdan uygun aracı seçebilir, tek tuşla çağrı ya da WhatsApp üzerinden
-            fiyat ve uygunluk sorabilirsiniz.
+          <p class="hero-note">
+            Aşağıdan aracınızı seçip tek tuşla arayabilir ya da WhatsApp üzerinden fiyat ve uygunluk sorabilirsiniz.
           </p>
         </div>
       </section>
 
-      <!-- CARS -->
-      <section id="cars">
-        <div class="section-eyebrow">Araçlarımız</div>
+      <!-- ARAÇLAR -->
+      <section id="araclar">
+        <div class="section-label">ARAÇLARIMIZ</div>
         <h2 class="section-title">Ekonomik &amp; Orta Segment</h2>
 
-        <!-- Burada 17 aracı temsil eden örnek kartlar, tekrar kullanılabilir -->
-        <div class="card">
-          <div class="car-card-header">
-            <span class="car-name">Hyundai Accent Blue</span>
-            <span class="car-tag">Ekonomik</span>
-          </div>
-          <div class="car-meta">Manuel / Benzin · Günlük kiralama</div>
-          <div class="car-cta-row">
-            <span class="link-underline">Detay ve fiyat için arayın</span>
-            <span>→ WhatsApp</span>
-          </div>
-        </div>
+        <div class="cars-list">
 
-        <div class="card">
-          <div class="car-card-header">
-            <span class="car-name">Hyundai Accent Blue</span>
-            <span class="car-tag">Ekonomik</span>
-          </div>
-          <div class="car-meta">Otomatik / Benzin · Günlük kiralama</div>
-          <div class="car-cta-row">
-            <span class="link-underline">Detay için arayın</span>
-            <span>→ WhatsApp</span>
-          </div>
-        </div>
+          <article class="car-card">
+            <div class="car-row-top">
+              <h3 class="car-name">Hyundai Accent Blue</h3>
+              <div class="car-tag">Ekonomik</div>
+            </div>
+            <p class="car-info">Otomatik / Benzin • Günlük kiralama</p>
+            <div class="car-actions">
+              <a class="car-link" href="tel:+905449709712">Detay ve fiyat için arayın</a>
+              <a class="car-wa" href="https://wa.me/905449709712" target="_blank">
+                → WhatsApp
+              </a>
+            </div>
+          </article>
 
-        <div class="card">
-          <div class="car-card-header">
-            <span class="car-name">Ford Fiesta</span>
-            <span class="car-tag">Ekonomik</span>
-          </div>
-          <div class="car-meta">Manuel / Benzin · Günlük kiralama</div>
-          <div class="car-cta-row">
-            <span class="link-underline">Fiyat bilgisi için arayın</span>
-            <span>→ WhatsApp</span>
-          </div>
-        </div>
+          <article class="car-card">
+            <div class="car-row-top">
+              <h3 class="car-name">Ford Fiesta</h3>
+              <div class="car-tag">Ekonomik</div>
+            </div>
+            <p class="car-info">Manuel / Benzin • Günlük kiralama</p>
+            <div class="car-actions">
+              <a class="car-link" href="tel:+905449709712">Fiyat bilgisi için arayın</a>
+              <a class="car-wa" href="https://wa.me/905449709712" target="_blank">
+                → WhatsApp
+              </a>
+            </div>
+          </article>
 
-        <div class="card">
-          <div class="car-card-header">
-            <span class="car-name">Peugeot 301</span>
-            <span class="car-tag">Orta</span>
-          </div>
-          <div class="car-meta">Dizel · Ekonomik yakıt · Günlük / Aylık</div>
-          <div class="car-cta-row">
-            <span class="link-underline">Güncel kampanya sorunuz</span>
-            <span>→ WhatsApp</span>
-          </div>
-        </div>
+          <article class="car-card">
+            <div class="car-row-top">
+              <h3 class="car-name">Peugeot 301</h3>
+              <div class="car-tag">Orta</div>
+            </div>
+            <p class="car-info">Dizel • Ekonomik yakıt • Günlük / Aylık</p>
+            <div class="car-actions">
+              <a class="car-link" href="tel:+905449709712">Güncel kampanya sorunuz</a>
+              <a class="car-wa" href="https://wa.me/905449709712" target="_blank">
+                → WhatsApp
+              </a>
+            </div>
+          </article>
 
-        <div class="card">
-          <div class="car-card-header">
-            <span class="car-name">Citroen C-Elysée</span>
-            <span class="car-tag">Orta</span>
-          </div>
-          <div class="car-meta">Dizel · Geniş bagaj · Günlük / Aylık</div>
-          <div class="car-cta-row">
-            <span class="link-underline">Teklif için arayın</span>
-            <span>→ WhatsApp</span>
-          </div>
-        </div>
+          <article class="car-card">
+            <div class="car-row-top">
+              <h3 class="car-name">Citroen C-Elysée</h3>
+              <div class="car-tag">Orta</div>
+            </div>
+            <p class="car-info">Dizel • Geniş bagaj • Günlük / Aylık</p>
+            <div class="car-actions">
+              <a class="car-link" href="tel:+905449709712">Teklif için arayın</a>
+              <a class="car-wa" href="https://wa.me/905449709712" target="_blank">
+                → WhatsApp
+              </a>
+            </div>
+          </article>
 
-        <div class="card">
-          <div class="car-card-header">
-            <span class="car-name">Fiat Egea</span>
-            <span class="car-tag">Orta</span>
-          </div>
-          <div class="car-meta">Dizel · Manuel / Otomatik seçenekli</div>
-          <div class="car-cta-row">
-            <span class="link-underline">Detay ve uygunluk için arayın</span>
-            <span>→ WhatsApp</span>
-          </div>
-        </div>
+          <article class="car-card">
+            <div class="car-row-top">
+              <h3 class="car-name">Fiat Egea</h3>
+              <div class="car-tag">Orta</div>
+            </div>
+            <p class="car-info">Dizel • Manuel / Otomatik seçenekli</p>
+            <div class="car-actions">
+              <a class="car-link" href="tel:+905449709712">Detay ve fiyat için arayın</a>
+              <a class="car-wa" href="https://wa.me/905449709712" target="_blank">
+                → WhatsApp
+              </a>
+            </div>
+          </article>
 
-        <!-- Not: toplam 17 araç için yukarıdaki kartlar kopyalanıp versiyonlandırılabilir -->
+        </div>
       </section>
 
-      <!-- ABOUT -->
-      <section id="about">
-        <div class="section-eyebrow">Hakkımızda</div>
+      <!-- HAKKIMIZDA -->
+      <section id="hakkimizda">
+        <div class="section-label">HAKKIMIZDA</div>
         <h2 class="section-title">GÜR RENT A CAR</h2>
 
         <div class="card">
-          <h3 style="font-size:16px; margin-bottom:6px;">Kısaca Biz</h3>
-          <p class="section-sub">
-            Gür Rent A Car, 2015 yılında Konya’da kurulmuş olup 15+ araçtan oluşan
-            ekonomik, orta ve lüks filosuyla Karaman’da kiralık araç hizmeti vermektedir.
+          <h3>Kısaca Biz</h3>
+          <p>
+            Gür Rent A Car, 2015 yılında Konya’da kurulmuş olup 15+ araçtan oluşan ekonomik, orta ve lüks filosuyla Karaman’da kiralık araç hizmeti vermektedir.
           </p>
-          <p class="section-sub">
-            Şehir dışı ve yurt dışından gelen bireylere; iş seyahati ve tatil amaçlı
-            kullanımlar için güvenli, ekonomik ulaşım çözümleri sunar.
+          <p>
+            Şehir dışı ve yurt dışından gelen bireyler için iş seyahati ve tatil amaçlı kullanımlara yönelik güvenli, ekonomik ulaşım çözümleri sunar. Araçlar yalnızca Karaman Merkez ofisinden teslim edilir. Havaalanı ve otogar servisimiz ile zamanında ve 7/24 hizmet alabilirsiniz.
           </p>
-          <p class="section-sub" style="margin-bottom:0;">
-            Araçlarımız yalnızca Karaman Merkez ofisinden teslim edilir. Havaalanı ve
-            otogar servisimiz ile zamanında ve 7/24 hizmet alabilirsiniz.
-          </p>
+
+          <div class="bullet-badges">
+            <div class="bullet-badge">15+ araçlık filo</div>
+            <div class="bullet-badge">Ekonomik • Orta • Lüks</div>
+            <div class="bullet-badge">Karaman Merkez ofis teslim</div>
+            <div class="bullet-badge">Havaalanı &amp; otogar servisi</div>
+            <div class="bullet-badge">7/24 telefon &amp; WhatsApp desteği</div>
+          </div>
         </div>
       </section>
 
-      <!-- LOCATIONS & LANGUAGES -->
-      <section id="locations">
-        <div class="section-eyebrow">Lokasyonlar &amp; Diller</div>
+      <!-- LOKASYON & DİLLER -->
+      <section id="lokasyonlar">
+        <div class="section-label">LOKASYONLAR &amp; DİLLER</div>
         <h2 class="section-title">Popüler Lokasyonlar</h2>
 
         <div class="card">
-          <div style="margin-bottom:12px;">
-            <ul class="locations-list">
-              <li>» Karaman Merkez Araç Kiralama</li>
-              <li>» Karaman Otogar Araç Teslim</li>
-              <li>» Konya Havalimanı – Karaman Transfer</li>
-            </ul>
-          </div>
+          <h3>Lokasyonlar</h3>
+          <p>› Karaman Merkez Araç Kiralama</p>
+          <p>› Karaman Otogar Araç Teslim</p>
+          <p>› Konya Havalimanı – Karaman transfer</p>
 
-          <h3 style="font-size:14px; margin-bottom:6px;">Araç Kiralama Dilleri</h3>
-          <ul class="langs-list">
-            <li><span class="langs-bullet"></span>Türkçe — Araç kiralama</li>
-            <li><span class="langs-bullet"></span>English — Car Rental</li>
-            <li><span class="langs-bullet"></span>Deutsch — Auto Vermietung</li>
-            <li><span class="langs-bullet"></span>Русский — прокат автомобилей</li>
-            <li><span class="langs-bullet"></span>العربية — استئجار سيارة</li>
-          </ul>
+          <h3 style="margin-top:12px;">Araç Kiralama Dilleri</h3>
+          <p>• Türkçe — Araç kiralama</p>
+          <p>• English — Car Rental</p>
+          <p>• Deutsch — Auto Vermietung</p>
+          <p>• Русский — прокат автомобилей</p>
+          <p>• العربية — استئجار سيارة</p>
         </div>
       </section>
 
-      <!-- TESTIMONIALS (slider) -->
-      <section id="testimonials">
-        <div class="section-eyebrow">Müşteri Yorumları</div>
+      <!-- MÜŞTERİ YORUMLARI -->
+      <section id="yorumlar">
+        <div class="section-label">MÜŞTERİ YORUMLARI</div>
         <h2 class="section-title">Müşterilerimiz Ne Diyor?</h2>
 
-        <div class="testimonials-wrapper">
-          <div class="testimonials-track">
-            <div class="testimonial">
-              <div class="testimonial-name">Fatih P.</div>
-              <div class="testimonial-text">
-                Tıkır tıkır işleyen sistemleri var, tavsiye ederim.
-              </div>
-            </div>
-            <div class="testimonial">
-              <div class="testimonial-name">Salih K.</div>
-              <div class="testimonial-text">
-                Aldığımız araç çok yeni ve temizdi.
-              </div>
-            </div>
-            <div class="testimonial">
-              <div class="testimonial-name">Melike A.</div>
-              <div class="testimonial-text">
-                Firma ilgili, biz memnun kaldık.
-              </div>
-            </div>
-            <div class="testimonial">
-              <div class="testimonial-name">Rahmi B.</div>
-              <div class="testimonial-text">
-                Her şey güzel.
-              </div>
-            </div>
-
-            <!-- Aynı set tekrar edilerek kesintisiz kayma sağlanır -->
-            <div class="testimonial">
-              <div class="testimonial-name">Fatih P.</div>
-              <div class="testimonial-text">
-                Tıkır tıkır işleyen sistemleri var, tavsiye ederim.
-              </div>
-            </div>
-            <div class="testimonial">
-              <div class="testimonial-name">Salih K.</div>
-              <div class="testimonial-text">
-                Aldığımız araç çok yeni ve temizdi.
-              </div>
-            </div>
-            <div class="testimonial">
-              <div class="testimonial-name">Melike A.</div>
-              <div class="testimonial-text">
-                Firma ilgili, biz memnun kaldık.
-              </div>
-            </div>
-            <div class="testimonial">
-              <div class="testimonial-name">Rahmi B.</div>
-              <div class="testimonial-text">
-                Her şey güzel.
-              </div>
-            </div>
+        <div class="review-box">
+          <div class="review-name" id="reviewName">Melike A.</div>
+          <div class="review-text" id="reviewText">
+            Firma ilgili, biz memnun kaldık.
+          </div>
+          <div class="review-dots">
+            <div class="review-dot active" data-idx="0"></div>
+            <div class="review-dot" data-idx="1"></div>
+            <div class="review-dot" data-idx="2"></div>
+            <div class="review-dot" data-idx="3"></div>
           </div>
         </div>
       </section>
 
-      <!-- FAQ -->
-      <section id="faq">
-        <div class="section-eyebrow">SSS</div>
+      <!-- SSS (Koşullar + şartlar sadeleştirilmiş) -->
+      <section id="sss">
+        <div class="section-label">SSS</div>
         <h2 class="section-title">Sık Sorulan Sorular</h2>
-        <p class="section-sub">
-          Araç kiralama şartları ve sigorta kapsamı ile ilgili özet bilgilerdir.
+        <p class="section-desc">
+          Araç kiralama şartları ve sigorta kapsamı ile ilgili özet bilgiler.
         </p>
 
-        <div class="accordion">
-          <div class="accordion-item open">
-            <button class="accordion-header" type="button">
-              <span>ARAÇ KİRALAMA ŞARTLARI</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-body">
+        <div class="faq-list">
+
+          <details class="faq-item" open>
+            <summary>Araç kiralama şartları nelerdir?</summary>
+            <div class="faq-body">
               <ul>
-                <li>Araç kiralamak için minimum yaş: <strong>23</strong></li>
+                <li>Minimum yaş: <strong>23</strong></li>
                 <li>En az <strong>iki yıllık</strong> geçerli sürücü belgesi</li>
                 <li>Ev ve iş telefonu ile açık adres bilgileri</li>
-                <li>Aracı sürecek kişi sayısı sözleşmede belirtilmelidir.</li>
-                <li>
-                  Sözleşmede yer almayan kişilerin kullanımı halinde tüm hasar ve
-                  cezalardan kiracı da sorumludur.
-                </li>
+                <li>Aracı sürecek kişi sayısı sözleşmede belirtilmelidir</li>
+                <li>Sözleşmede yer almayan kişilerin kullanımı halinde tüm hasar ve cezalardan kiracı sorumludur</li>
               </ul>
             </div>
-          </div>
+          </details>
 
-          <div class="accordion-item">
-            <button class="accordion-header" type="button">
-              <span>SİGORTA VE KASKO KAPSAMI DIŞINDA KALAN NOKTALAR NELERDİR?</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-body">
+          <details class="faq-item">
+            <summary>Sigorta ve kasko kapsamı dışında kalan durumlar?</summary>
+            <div class="faq-body">
               <ul>
-                <li>Alkollü veya uyuşturucu madde etkisinde araç kullanmak</li>
+                <li>Alkollü veya uyuşturucu madde etkisinde araç kullanımı</li>
                 <li>Belirlenen hız limitlerini aşmak</li>
-                <li>Kaza anında aracı bulunduğu yerden hareket ettirmek</li>
-                <li>
-                  Kaza tespit, alkol veya çalıntı raporu gibi resmi tutanakları
-                  almamak
-                </li>
-                <li>
-                  Anahtar ve ruhsatın çalınması (taşınabilir eşya kapsamındadır)
-                </li>
-                <li>
-                  Kaza harici lastik, cam, far vb. hasarlar kasko kapsamına girmez.
-                </li>
+                <li>Kaza sonrası aracı bulunduğu yerden hareket ettirmek</li>
+                <li>Kaza tespit, alkol ya da çalıntı raporu gibi resmi evrakları almamak</li>
+                <li>Anahtar ve ruhsatın çalınması</li>
+                <li>Kaza harici lastik, cam, far vb. hasarlar</li>
               </ul>
             </div>
-          </div>
+          </details>
 
-          <div class="accordion-item">
-            <button class="accordion-header" type="button">
-              <span>KİRALADIĞIM ARACI BENDEN BAŞKA BİRİ KULLANABİLİR Mİ?</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-body">
+          <details class="faq-item">
+            <summary>Kiraladığım aracı benden başka biri kullanabilir mi?</summary>
+            <div class="faq-body">
               <p>
-                Kiralayan dışındaki üçüncü şahısların aracı kullanabilmesi için
-                sürücü belgesi ve kimlik bilgilerinin sözleşmeye eklenmesi
-                zorunludur.
-              </p>
-              <p>
-                Sözleşmeye eklenmemiş sürücü ile kaza olması halinde rent a car
-                kaskosu devre dışı kalır.
+                Araç yalnızca kira sözleşmesinde adı bulunan kişiler tarafından kullanılabilir.
+                Ek sürücüler için sürücü belgesi ve kimlik bilgileri sözleşmeye eklenmelidir.
+                Sözleşmede adı olmayan kişiler aracı kullanırsa rent a car kaskosu devre dışı kalır.
               </p>
             </div>
-          </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Yaş ve ehliyet süresi şartları nelerdir?</summary>
+            <div class="faq-body">
+              <ul>
+                <li>Ekonomik &amp; orta grup: minimum <strong>23 yaş</strong>, en az <strong>3 yıllık</strong> ehliyet</li>
+                <li>Lüks grup: minimum <strong>25 yaş</strong>, en az <strong>5 yıllık</strong> ehliyet</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>KM sınırı ve aşım ücretleri nasıldır?</summary>
+            <div class="faq-body">
+              <ul>
+                <li>Günlük: maksimum <strong>250 km</strong></li>
+                <li>Aylık: maksimum <strong>3.000 km</strong></li>
+                <li>Ekonomik: km başı 5 TL, Orta: 7,50 TL, Lüks: 10 TL</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Kiralama süresi ne kadar?</summary>
+            <div class="faq-body">
+              <p>
+                Günlük kiralamalarda minimum süre <strong>24 saat</strong>, aylık kiralamalarda minimum süre
+                <strong>30 gündür</strong>.
+              </p>
+            </div>
+          </details>
+
         </div>
       </section>
 
-      <!-- TERMS -->
-      <section id="terms">
-        <div class="section-eyebrow">Koşul ve Sözleşme</div>
-        <h2 class="section-title">Araç Kiralama Koşulları</h2>
-
-        <div class="accordion">
-          <div class="accordion-item open">
-            <button class="accordion-header" type="button">
-              <span>ARAÇ KİRALAMA ŞARTLARI (ÖZET)</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-body">
-              <ul>
-                <li>Ekonomik &amp; orta grup için min. 23 yaş ve 3 yıllık ehliyet</li>
-                <li>Lüks grup için min. 25 yaş ve 5 yıllık ehliyet</li>
-                <li>Ev / iş iletişim bilgileri ve adres beyanı</li>
-                <li>Aracı sürecek tüm sürücüler sözleşmeye işlenir.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-header" type="button">
-              <span>KAZA HALLERİ</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-body">
-              <p>
-                Ehliyetsiz veya alkollü kullanımda rent a car kaskosu geçerli
-                değildir.
-              </p>
-              <p>
-                Kiracı kusurlu ise hasarın aşağıdaki tutarlara kadar olan kısmı ve
-                aracın tamir süresindeki iş kaybı kiracıya aittir:
-              </p>
-              <ul>
-                <li>Ekonomik segment: 50.000 TL</li>
-                <li>Orta segment: 75.000 TL</li>
-                <li>Lüks segment: 100.000 TL</li>
-              </ul>
-              <p>
-                Kaza durumunda ücretsiz ikame araç hizmeti yoktur. Müsaitlik
-                dahilinde ücretli tedarik araç verilebilir.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-header" type="button">
-              <span>KM SINIRI</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-body">
-              <p>Maksimum kilometre sınırları:</p>
-              <ul>
-                <li>Günlük kiralamalarda: 250 km</li>
-                <li>Aylık kiralamalarda: 3.000 km</li>
-                <li>1–4 gün: 250 km / gün</li>
-                <li>4–7 gün: 200 km / gün</li>
-                <li>7–15 gün: 150 km / gün</li>
-                <li>15–30 gün: 100 km / gün</li>
-              </ul>
-              <p>KM aşım bedelleri:</p>
-              <ul>
-                <li>Ekonomik segment: 5 TL / km</li>
-                <li>Orta segment: 7,50 TL / km</li>
-                <li>Lüks segment: 10 TL / km</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-header" type="button">
-              <span>Araç Kiralayabilme Şartları (Yaş &amp; Ehliyet)</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-body">
-              <ul>
-                <li>Ekonomik grup: min. 23 yaş, en az 3 yıllık ehliyet</li>
-                <li>Orta grup: min. 23 yaş, en az 3 yıllık ehliyet</li>
-                <li>Lüks grup: min. 25 yaş, en az 5 yıllık ehliyet</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-header" type="button">
-              <span>Kiralama Süresi</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-body">
-              <p>
-                Günlük kiralamalarda minimum süre <strong>24 saat</strong>,
-                aylık kiralamalarda ise <strong>30 gün</strong>dür.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact">
-        <div class="section-eyebrow">İletişim</div>
+      <!-- İLETİŞİM -->
+      <section id="iletisim">
+        <div class="section-label">İLETİŞİM</div>
         <h2 class="section-title">Rezervasyon ve Bilgi</h2>
+        <p class="section-desc">
+          Sadece telefonla arayarak veya WhatsApp üzerinden rezervasyon ve bilgi alabilirsiniz.
+          Online rezervasyon alınmamaktadır.
+        </p>
 
-        <div class="card">
-          <h3 style="font-size:16px; margin-bottom:8px;">İletişim Bilgileri</h3>
-          <ul class="contact-list">
-            <li>
-              <span class="contact-label">Adres:</span>
-              Külhan Mh. 2. İstasyon Cd. No:29/E Merkez / Karaman
-            </li>
-            <li>
-              <span class="contact-label">Telefon:</span>
-              <span class="contact-highlight">+90 544 970 97 12</span> /
-              +90 541 242 72 67
-            </li>
-            <li>
-              <span class="contact-label">WhatsApp:</span>
-              <span class="contact-highlight">+90 544 970 97 12</span>
-            </li>
-            <li>
-              <span class="contact-label">Instagram:</span>
-              <span class="contact-highlight">@gurrentacar</span>
-            </li>
-            <li>
-              <span class="contact-label">İşyeri Sahibi:</span>
-              Ahmet GÜR
-            </li>
-            <li style="margin-top:6px;">
-              Tüm kiralamalar Karaman Merkez ofisinde, resmi sözleşme ile
-              gerçekleştirilir.
-            </li>
-          </ul>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>İletişim Bilgileri</h3>
+            <p><strong>Adres:</strong> Külhan Mh. 2. İstasyon Cd. No:29/E Merkez / Karaman</p>
+            <p><strong>Telefon:</strong> +90 544 970 97 12 / +90 541 242 72 67</p>
+            <p><strong>WhatsApp:</strong> +90 544 970 97 12</p>
+            <p><strong>Instagram:</strong> @gurrentacar</p>
+            <p><strong>İşyeri Sahibi:</strong> Ahmet GÜR</p>
+            <p style="margin-top:6px;">
+              Tüm kiralamalarımız Karaman Merkez ofisinde, resmi sözleşme ile gerçekleştirilir.
+            </p>
 
-          <div class="quick-actions">
-            <a class="quick-btn" href="tel:+905449709712">
-              <span>📞</span> Rezervasyon Hattını Ara
-            </a>
-            <a
-              class="quick-btn secondary"
-              href="https://wa.me/905449709712"
-              target="_blank"
-            >
-              <span>💬</span> WhatsApp ile Mesaj Gönder
-            </a>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="tel:+905449709712">📞 Rezervasyon Hattını Ara</a>
+              <a class="btn btn-outline" href="https://wa.me/905449709712" target="_blank">💬 WhatsApp ile Mesaj Gönder</a>
+              <a class="btn btn-ghost" href="https://instagram.com/gurrentacar" target="_blank">📷 Instagram Profilini Aç</a>
+            </div>
           </div>
         </div>
       </section>
-    </main>
 
-    <!-- SCROLL TO TOP BUTTON -->
-    <button class="scroll-top" id="scrollTopBtn" aria-label="En üste dön">
-      ↑
-    </button>
-
-    <!-- ACTION BAR (CALL & WA) -->
-    <div class="action-bar">
-      <a href="tel:+905449709712" class="action-btn call">
-        <span class="icon">📞</span>
-        <span>Ara</span>
-      </a>
-      <a
-        href="https://wa.me/905449709712"
-        target="_blank"
-        class="action-btn wa"
-      >
-        <span class="icon">💬</span>
-        <span>WhatsApp</span>
-      </a>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-      <div>
-        Copyright © 2024 Her Hakkı Saklıdır. Kopyalanması, çoğaltılması ve
-        dağıtılması halinde yasal haklarımız işletilecektir.
-      </div>
-      <div style="margin-top:4px;">
-        Reklam ve Tasarım:
-        <span class="highlight">@huseyinelaldi7</span>
-      </div>
-    </footer>
+    <!-- Scroll to top -->
+    <button class="scroll-top" id="scrollTop" aria-label="Yukarı çık">↑</button>
+  </main>
+
+  <!-- Alt sabit butonlar -->
+  <div class="bottom-bar">
+    <div class="bottom-bar-inner">
+      <a class="bottom-btn call" href="tel:+905449709712">📞 Ara</a>
+      <a class="bottom-btn wa" href="https://wa.me/905449709712" target="_blank">💬 WhatsApp</a>
+      <a class="bottom-btn ig" href="https://instagram.com/gurrentacar" target="_blank">📷 Instagram</a>
+    </div>
   </div>
 
-  <script>
-    // Drawer toggle
-    const hamburger = document.getElementById("hamburger");
-    const drawer = document.getElementById("drawer");
-    const overlay = document.getElementById("drawerOverlay");
+  <!-- Footer -->
+  <footer>
+    Copyright © 2024 Her Hakkı Saklıdır. Kopyalanması, çoğaltılması ve
+    dağıtılması halinde yasal haklarımız işletilecektir.<br />
+    Reklam ve Tasarım: <span>@huseyinelaldi7</span>
+  </footer>
 
-    function closeDrawer() {
-      drawer.classList.remove("open");
-      overlay.classList.remove("visible");
-      hamburger.classList.remove("open");
+  <script>
+    // Hamburger menü
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+
+    // Scroll to top
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Müşteri yorumları – basit slider
+    const reviews = [
+      { name: 'Melike A.', text: 'Firma ilgili, biz memnun kaldık.' },
+      { name: 'Rahmi B.', text: 'Her şey güzel.' },
+      { name: 'Fatih P.', text: 'Tıkır tıkır işleyen sistemleri var, tavsiye ederim.' },
+      { name: 'Salih K.', text: 'Aldığımız araç çok yeni ve temizdi.' }
+    ];
+
+    let reviewIndex = 0;
+    const nameEl = document.getElementById('reviewName');
+    const textEl = document.getElementById('reviewText');
+    const dots = document.querySelectorAll('.review-dot');
+
+    function showReview(idx) {
+      const r = reviews[idx];
+      nameEl.textContent = r.name;
+      textEl.textContent = r.text;
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === idx);
+      });
     }
 
-    hamburger.addEventListener("click", () => {
-      const isOpen = drawer.classList.toggle("open");
-      overlay.classList.toggle("visible", isOpen);
-      hamburger.classList.toggle("open", isOpen);
-    });
-
-    overlay.addEventListener("click", closeDrawer);
-
-    drawer.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeDrawer);
-    });
-
-    // Accordion
-    document.querySelectorAll(".accordion-header").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const item = btn.parentElement;
-        const body = item.querySelector(".accordion-body");
-
-        if (item.classList.contains("open")) {
-          body.style.maxHeight = null;
-          item.classList.remove("open");
-        } else {
-          body.style.maxHeight = body.scrollHeight + "px";
-          item.classList.add("open");
-        }
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = Number(dot.dataset.idx);
+        reviewIndex = idx;
+        showReview(reviewIndex);
       });
-
-      // ilk açık olan body yüksekliğini ayarla
-      const item = btn.parentElement;
-      if (item.classList.contains("open")) {
-        const body = item.querySelector(".accordion-body");
-        body.style.maxHeight = body.scrollHeight + "px";
-      }
     });
 
-    // Scroll to top button
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        scrollBtn.classList.add("visible");
-      } else {
-        scrollBtn.classList.remove("visible");
-      }
-    });
-
-    scrollBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    setInterval(() => {
+      reviewIndex = (reviewIndex + 1) % reviews.length;
+      showReview(reviewIndex);
+    }, 5000);
   </script>
 </body>
 </html>
